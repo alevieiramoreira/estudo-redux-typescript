@@ -1,18 +1,18 @@
 // ACTION
-export interface Action {
-  type: string,
-  id: string,
-  value: string | boolean
+export interface FormAction {
+  type: string;
+  id: string;
+  value: string | boolean;
 }
 
 // STATE
 export interface State {
-  form: Field[]
+  form: Field[];
 }
 
 export interface Field {
-  id: string,
-  value: string | boolean
+  id: string;
+  value: string | boolean;
 }
 
 /*

@@ -1,6 +1,8 @@
-import { Action } from '../types/index';
+import { FormAction } from '../types/index';
 
-export function handleToggle(event: React.ChangeEvent<HTMLInputElement>) : Action {
+export function handleToggle(
+  event: React.ChangeEvent<HTMLInputElement>,
+): FormAction {
   return {
     type: 'TOGGLE',
     id: event.target.id,
@@ -8,7 +10,9 @@ export function handleToggle(event: React.ChangeEvent<HTMLInputElement>) : Actio
   };
 }
 
-export function handleText(event: React.ChangeEvent<HTMLInputElement>): Action {
+export function handleText(
+  event: React.ChangeEvent<HTMLInputElement>,
+): FormAction {
   return {
     type: 'TEXT',
     id: event.target.id,
@@ -16,7 +20,9 @@ export function handleText(event: React.ChangeEvent<HTMLInputElement>): Action {
   };
 }
 
-export function handleSelection(event: React.ChangeEvent<HTMLSelectElement>): Action {
+export function handleSelection(
+  event: React.ChangeEvent<HTMLSelectElement>,
+): FormAction {
   return {
     type: 'SELECT',
     id: event.target.id,
@@ -24,13 +30,21 @@ export function handleSelection(event: React.ChangeEvent<HTMLSelectElement>): Ac
   };
 }
 
-export function handleTextArea(event: React.ChangeEvent<HTMLTextAreaElement>): Action {
+export function handleTextArea(
+  event: React.ChangeEvent<HTMLTextAreaElement>,
+): FormAction {
   return {
     type: 'TEXTAREA',
     id: event.target.id,
     value: event.target.value,
   };
 }
+
+export type FormActions =
+  | typeof handleTextArea
+  | typeof handleSelection
+  | typeof handleText
+  | typeof handleToggle;
 
 /*
   DÚVIDA: Como o React.ChangeEvent recebe um elemento genérico,

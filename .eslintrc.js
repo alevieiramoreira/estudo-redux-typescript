@@ -23,6 +23,7 @@ module.exports = {
   },
   plugins: ['react', 'import', 'jsx-a11y'],
   rules: {
+    curly: ['error', 'all'],
     'linebreak-style': [2, 'windows'],
     'react/jsx-filename-extension': [
       'error',
@@ -34,17 +35,18 @@ module.exports = {
       'error',
       'ignorePackages',
       {
-        'js': 'never',
-        'jsx': 'never',
-        'ts': 'never',
-        'tsx': 'never'
-      }
-   ],
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     'no-empty-function': 'off',
-    '@typescript-eslint/no-empty-function': 'off'
+    'implicit-arrow-linebreak': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
   },
   settings: {
     'import/parsers': {
